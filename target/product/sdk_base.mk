@@ -18,7 +18,6 @@ PRODUCT_PROPERTY_OVERRIDES :=
 
 PRODUCT_PACKAGES := \
 	ApiDemos \
-	CubeLiveWallpapers \
 	CustomLocale \
 	Development \
 	DevelopmentSettings \
@@ -27,11 +26,7 @@ PRODUCT_PACKAGES := \
 	Fallback \
 	Gallery \
 	GestureBuilder \
-	LegacyCamera \
 	librs_jni \
-	libwnndict \
-	libWnnEngDic \
-	libWnnJpnDic \
 	LiveWallpapersPicker \
 	Mms \
 	rild \
