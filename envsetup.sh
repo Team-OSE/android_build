@@ -2367,18 +2367,17 @@ function make()
     local secs=$(($tdiff % 60))
     echo
     if [ $ret -eq 0 ] ; then
-        echo -n -e "#### make completed successfully "
+        echo -n -e "Build Successful - "
     else
-        echo -n -e "#### make failed to build some targets "
+        echo -n -e "Build Failed - "
     fi
     if [ $hours -gt 0 ] ; then
-        printf "(%02g:%02g:%02g (hh:mm:ss))" $hours $mins $secs
+        printf "Total time elapsed: (%02g:%02g:%02g)" $hours $mins $secs
     elif [ $mins -gt 0 ] ; then
-        printf "(%02g:%02g (mm:ss))" $mins $secs
+        printf "Total time elapsed: (%02g:%02g)" $mins $secs
     elif [ $secs -gt 0 ] ; then
-        printf "(%s seconds)" $secs
+        printf "Total time elapsed: (%s seconds)" $secs
     fi
-    echo -e " ####"
     echo
     return $ret
 }
