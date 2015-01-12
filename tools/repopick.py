@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# Copyright (C) 2013-14 The CyanogenMod Project
+# Copyright (C) 2013-14 The OSE Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -344,7 +344,7 @@ for changeps in args.change_number:
                 else:
                     project_path = '/'.join(split_path[:-1])
 
-                if len(split_branch) == 4 and split_branch[0] == 'cm' and split_branch[2] == 'caf':
+                if len(split_branch) == 4 and split_branch[0] == 'ose' and split_branch[2] == 'caf':
                     project_path += '-caf/msm' + split_branch[3]
                 # audio and media are different from display
                 elif split_path[2] == 'audio' or split_path[2] == 'media':
