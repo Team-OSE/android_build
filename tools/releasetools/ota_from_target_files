@@ -589,6 +589,21 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   system_progress = 0.75
 
+  script.Print("")
+  script.Print("####################################")
+  script.Print("#    /OOOOOO   /SSSSSS  /EEEEEEEE  #")
+  script.Print("#   /OO__  OO /SS__  SS| EE_____/  #")
+  script.Print("#  | OO  \ OO| SS  \__/| EE        #")
+  script.Print("#  | OO  | OO|  SSSSSS | EEEEE     #")
+  script.Print("#  | OO  | OO \____  SS| EE__/     #")
+  script.Print("#  | OO  | OO /SS  \ SS| EE        #")
+  script.Print("#  |  OOOOOO/|  SSSSSS/| EEEEEEEE  #")
+  script.Print("#   \______/  \______/ |________/  #")
+  script.Print("####################################")
+  script.Print("#    ~ Open Source Evolution ~     #")
+  script.Print("####################################")
+  script.Print("")
+
   if OPTIONS.wipe_user_data:
     system_progress -= 0.1
   if HasVendorPartition(input_zip):
