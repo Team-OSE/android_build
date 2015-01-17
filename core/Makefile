@@ -1671,7 +1671,23 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(OSE_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(OSE_TARGET_PACKAGE) > $(OSE_TARGET_PACKAGE).md5sum
-	@echo -e ${CL_CYN}"Package Complete: $(OSE_TARGET_PACKAGE)"${CL_RST}
+	@echo -e ${CL_MAG}""
+	@echo -e ""
+	@echo -e "####################################"
+	@echo -e "#    /OOOOOO   /SSSSSS  /EEEEEEEE  #"
+	@echo -e "#   /OO__  OO /SS__  SS| EE_____/  #"
+	@echo -e "#  | OO  \ OO| SS  \__/| EE        #"
+	@echo -e "#  | OO  | OO|  SSSSSS | EEEEE     #"
+	@echo -e "#  | OO  | OO \____  SS| EE__/     #"
+	@echo -e "#  | OO  | OO /SS  \ SS| EE        #"
+	@echo -e "#  |  OOOOOO/|  SSSSSS/| EEEEEEEE  #"
+	@echo -e "#   \______/  \______/ |________/  #"
+	@echo -e "####################################"
+	@echo -e "#      Open Source Evolution       #"
+	@echo -e "####################################"
+	@echo -e ""
+	@echo -e ""${CL_RST}
+	@echo -e ${CL_BLU}"Package Complete: $(OSE_TARGET_PACKAGE)"${CL_YLW}
 
 endif    # recovery_fstab is defined
 endif    # TARGET_NO_KERNEL != true
