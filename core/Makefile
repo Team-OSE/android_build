@@ -33,10 +33,10 @@ endif
 # The filter part means "only eval the copy-one-file rule if this
 # src:dest pair is the first one to match the same dest"
 #$(1): the src:dest pair
-define check-product-copy-files
-$(if $(filter %.apk, $(call word-colon, 2, $(1))),$(error \
-    Prebuilt apk found in PRODUCT_COPY_FILES: $(1), use BUILD_PREBUILT instead!))
-endef
+#define check-product-copy-files
+#$(if $(filter %.apk, $(call word-colon, 2, $(1))),$(error \
+#    Prebuilt apk found in PRODUCT_COPY_FILES: $(1), use BUILD_PREBUILT instead!))
+#endef
 # filter out the duplicate <source file>:<dest file> pairs.
 unique_product_copy_files_pairs :=
 $(foreach cf,$(PRODUCT_COPY_FILES), \
@@ -1688,6 +1688,13 @@ bacon: otapackage
 	@echo -e ""
 	@echo -e ""${CL_RST}
 	@echo -e ${CL_BLU}"Package Complete: $(OSE_TARGET_PACKAGE)"${CL_YLW}
+
+ifeq ($(USE_PREBUILT_CHROMIUM),1)
+ifneq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+	@echo -e ${CL_GRN}"Running Chromium prebuilt setup script..."${CL_RST}
+	$(hide) . $(TOPDIR)vendor/ose/tools/chromium_prebuilt.sh $(TOP)
+endif
+endif
 
 endif    # recovery_fstab is defined
 endif    # TARGET_NO_KERNEL != true
