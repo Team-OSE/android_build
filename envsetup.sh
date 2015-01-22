@@ -2135,7 +2135,7 @@ function reposync() {
             repo sync -j 4 "$@"
             ;;
         *)
-            schedtool -B -n 1 -e ionice -n 1 `which repo` sync -j 4 "$@"
+            schedtool -B -n 1 -e ionice -n 1 `which repo` sync -j$(cat /proc/cpuinfo | grep "^processor" | wc -l) "$@"
             ;;
     esac
 }
