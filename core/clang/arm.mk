@@ -22,7 +22,13 @@ CLANG_CONFIG_arm_UNKNOWN_CFLAGS := \
   -fno-builtin-sin \
   -fno-strict-volatile-bitfields \
   -fno-align-jumps \
-  -Wa,--noexecstack
+  -Wa,--noexecstack \
+  -Wno-unused-local-typedefs \
+  -fpredictive-commoning \
+  -ftree-loop-distribute-patterns \
+  -fvect-cost-model \
+  -ftree-partial-pre \
+  -fipa-cp-clone
 
 define subst-clang-incompatible-arm-flags
   $(subst -march=armv5te,-march=armv5t,\
