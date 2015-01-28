@@ -58,4 +58,6 @@ echo "ro.build.characteristics=$TARGET_AAPT_CHARACTERISTICS"
 
 echo "ro.ose.device=$OSE_DEVICE"
 
+echo "ro.ose.version=$OSE_VERSION"
+
 echo "# end build properties"
