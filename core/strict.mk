@@ -89,9 +89,64 @@ LOCAL_DISABLE_STRICT := \
 	libc_openbsd \
 	libc \
 	libc_nomalloc \
-        libcurl \
+	libcurl \
 	libc_malloc \
-	libjemalloc
+	libjemalloc \
+	libfs_mgr \
+	init \
+	libcutils \
+	liblog \
+	libselinux \
+	libext2_blkid \
+	libext4_utils_static \
+	adbd \
+	libminivold \
+	recovery_tune2fs\
+	libvold \
+	recovery_e2fsck \
+	libext2fs \
+	libminzip \
+	bu_recovery \
+	libsdcard \
+	libfusesideload \
+	libaapt \
+	libunwind \
+	libbluetooth_jni \
+	libEGL \
+	libGLES_trace \
+	libsync \
+	libnetutils \
+	libhardware_legacy \
+	libwpa_client \
+	libicui18n \
+	libft2 \
+	libicuuc \
+	libcommon_time_client \
+	libskia \
+	libsonivox \
+	libstagefright_foundation \
+	libusbhost \
+	libsqlite \
+	libbt-brcm_bta \
+	libbt-brcm_stack \
+	libbt-hci \
+	libbt-qcom_sbc_decoder \
+	libjni_jpegutil \
+	libjni_jpegstream \
+	libnfc-nci \
+	v8_tools_gyp_v8_base_arm_host_gyp \
+	third_party_icu_icuuc_arm_host_gyp \
+	v8_tools_gyp_v8_base_gyp \
+	libsvoxpico \
+	libbt-vendor \
+	third_party_libxml_libxml_gyp \
+	skia_skia_library_gyp \
+	third_party_sqlite_sqlite_gyp \
+	third_party_libevent_libevent_gyp \
+	third_party_freetype_ft2_gyp \
+	third_party_opus_opus_gyp \
+	third_party_WebKit_Source_platform_blink_common_gyp \
+	base_base_gyp
 
 ifneq (1,$(words $(filter $(LOCAL_DISABLE_STRICT), $(LOCAL_MODULE))))
 ifdef LOCAL_CONLYFLAGS
