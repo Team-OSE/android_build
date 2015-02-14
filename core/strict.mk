@@ -91,10 +91,14 @@ LOCAL_DISABLE_STRICT := \
 	libc_nomalloc \
         libcurl \
 	libc_malloc \
-	libjemalloc
+	canohost.c \
+	sshconnect.c \
+	ssh \
+	libssh \
+	audio.primary.msm8960
 
 ifneq (1,$(words $(filter $(LOCAL_DISABLE_STRICT), $(LOCAL_MODULE))))
-ifdef LOCAL_CONLYFLAGS
+ifndef LOCAL_CONLYFLAGS
 LOCAL_CONLYFLAGS += \
 	-fstrict-aliasing \
 	-Werror=strict-aliasing
@@ -113,7 +117,7 @@ LOCAL_CPPFLAGS := \
 	-fstrict-aliasing \
 	-Werror=strict-aliasing
 endif
-ifdef LOCAL_CLANG
+ifndef LOCAL_CLANG
 LOCAL_CONLYFLAGS += \
 	-Wstrict-aliasing=3
 LOCAL_CPPFLAGS += \
